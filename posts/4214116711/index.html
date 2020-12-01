@@ -168,7 +168,7 @@ if (asideStatus !== undefined) {
 <p>里边的数字1表示在当前维度上的前边和后边分别填充多大形状。也可以选择其他数字</p>
 <p>画了个图，方便理解</p>
 </blockquote>
-<p><img src="/img/numpy/np_pad_1.jpeg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/np_pad_1.jpeg"></p>
 <p>第3个参数为填充的方式</p>
 <blockquote>
 <p>constant：用连续一样的值填充。有参数项constant_values =（x, y）时前面用x填充，后面用y填充。缺省值为用0填充</p>
@@ -183,14 +183,14 @@ if (asideStatus !== undefined) {
 <p>同线性代数的矩阵乘法。</p>
 <p>2). np.multiply() 或 *</p>
 <p>计算的是矩阵对应位置元素的乘积。</p>
-<p><img src="/img/numpy/np_pad_2.jpeg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/np_pad_2.jpeg"></p>
 <h3 id="3-numpy-中-ndarray-和-array区别"><a href="#3-numpy-中-ndarray-和-array区别" class="headerlink" title="3. numpy 中 ndarray 和 array区别"></a>3. numpy 中 ndarray 和 array区别</h3><p>我们可以使用<code>np.array()</code>创建一个<code>ndarry</code>。<code>np.array()</code>是一个返回<code>ndarry</code>对象的方法。</p>
 <h3 id="4-numpy-中-shuffle-与-permutation-的区别"><a href="#4-numpy-中-shuffle-与-permutation-的区别" class="headerlink" title="4. numpy 中 shuffle 与 permutation 的区别"></a>4. numpy 中 shuffle 与 permutation 的区别</h3><p>两者都是<code>洗牌</code>的功能。区别是：shuffle直接打乱原数据，而permutation是保留原数据顺序，返回一个新的被打乱的数据。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"></span><br><span class="line">print(np.random.permutation(x))</span><br><span class="line">print(np.random.shuffle(x))</span><br><span class="line">np.random.shuffle(x)</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印如下</span></span><br><span class="line">[<span class="number">6</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span> <span class="number">4</span> <span class="number">3</span> <span class="number">5</span>]</span><br><span class="line"><span class="literal">None</span></span><br><span class="line">[<span class="number">5</span> <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">3</span> <span class="number">6</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-np-mean"><a href="#5-np-mean" class="headerlink" title="5. np.mean()"></a>5. np.mean()</h3><p>求取均值，可以求全部数据均值，也可以按行（列）求取均值</p>
 <p>其中参数<code>aixa</code>表示在哪个维度上取均值，0对所有元素取均值</p>
-<p><img src="/img/numpy/np_mean_1.jpeg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/np_mean_1.jpeg"></p>
 <p>画了个图，hhh</p>
 <h3 id="6-Numpy-中将多维数组转换为一维数组"><a href="#6-Numpy-中将多维数组转换为一维数组" class="headerlink" title="6. Numpy 中将多维数组转换为一维数组"></a>6. Numpy 中将多维数组转换为一维数组</h3><p>ravel()：如果没有必要，不会产生源数据的副本 。</p>
 <p>flatten()：返回源数据的副本 。</p>
