@@ -88,7 +88,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2020-12-11 13:23:37'
+  postUpdate: '2020-12-11 13:26:10'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -180,7 +180,7 @@ if (asideStatus !== undefined) {
 
   const getGithubIssues = () => {
     let githubArray = []
-    $.getJSON('https://api.github.com/repos/IamXGW.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1', (data) => { 
+    $.getJSON('https://api.github.com/repos/IamXGW/IamXGW.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1', (data) => { 
       $.each(data, (index, item) => {
         githubArray.push({
           'avatar': item.user.avatar_url,
