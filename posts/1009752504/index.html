@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>octave for Mac安装、使用 | IamXGW</title><meta name="keywords" content="软件安装"><meta name="author" content="IamXGW"><meta name="copyright" content="IamXGW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="安装、以及octave的基本用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="octave for Mac安装、使用">
+<meta property="og:url" content="http://example.com/posts/1009752504/index.html">
+<meta property="og:site_name" content="IamXGW">
+<meta property="og:description" content="安装、以及octave的基本用法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/octave.png">
+<meta property="article:published_time" content="2020-11-11T14:30:50.000Z">
+<meta property="article:modified_time" content="2020-11-11T14:31:50.000Z">
+<meta property="article:author" content="IamXGW">
+<meta property="article:tag" content="软件安装">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/octave.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/favicon.ico"><link rel="canonical" href="http://example.com/posts/1009752504/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c61c88b53b633e29facebb0bb7d799b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-177423460-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-177423460-1');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: IamXGW","link":"链接: ","source":"来源: IamXGW","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-11 22:31:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/mouseStyle.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/octave.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">IamXGW</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">octave for Mac安装、使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-11T14:30:50.000Z" title="发表于 2020-11-11 22:30:50">2020-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-11T14:31:50.000Z" title="更新于 2020-11-11 22:31:50">2020-11-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">617</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="安装octave"><a href="#安装octave" class="headerlink" title="安装octave"></a>安装octave</h2><p>首先，你的Mac上要安装好<code>Homebrew</code>。如果你不知道你的电脑装没装<code>Homebrew</code>，那你可以运行命令<code>brew -v</code>。如果显示下图则说明已经安装过。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/20201111_1.png" alt=""></p>
+<p>如果没有的话，运行这条命令安装<code>Homebrew</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>也可以去<a target="_blank" rel="noopener" href="https://brew.sh">Homebrew官网</a>了解下。官网的介绍很明白。</p>
+<p>下面直接运行命令<code>brew install octave</code>，然后等待安装完即可。整个安装过程可能很长，耐心。</p>
+<hr>
+<h2 id="octave基本使用"><a href="#octave基本使用" class="headerlink" title="octave基本使用"></a>octave基本使用</h2><p><a target="_blank" rel="noopener" href="https://www.gnu.org/software/octave/">GUN Octave官网</a>是这么介绍的，Octave是一门专门用于科学计算编程的语言（Scientific Programming Language）。</p>
+<blockquote>
+<p>GUN Octave 是一门最初被发明用于数值计算的高级语言，它使用一种与Matlab几乎完全兼容的语言，为解决数字上线性和非线性问题、执行其他数值实验提供了方便的命令行界面（Command Line Interface, 简称CLI）。Octave有大量的可以用于解决常见数值线性代数问题，求解非线性方程，求得普通函数的积分，处理多项式，求得普通微分和微分代数方程积分的工具。它也非常易于通过用户用Octave自带语言编写的自定义函数，或使用由C，C++和其他语言编写的动态加载模块来进行扩展和定制。</p>
+</blockquote>
+<p>下面介绍下octave的基本用法。</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><blockquote>
+<p>注：一般用大写字母表示矩阵（matrix），小写字母表示向量（vector）。</p>
+</blockquote>
+<p><code>V = [1, 2 ; 3, 4]</code>。生成矩阵。</p>
+<p><code>V = 1 : 0.1 : 2</code></p>
+<p><code>ones(2, 3)</code></p>
+<p><code>zeros(2, 3)</code></p>
+<p><code>rand(2, 3)</code></p>
+<p><code>randn(2, 3)</code></p>
+<p><code>hist(V)</code></p>
+<p><code>hist(V, 50)</code></p>
+<p><code>eye(4)</code></p>
+<p><code>help</code></p>
+<h3 id="移动数据"><a href="#移动数据" class="headerlink" title="移动数据"></a>移动数据</h3><p><code>size(A)</code></p>
+<p><code>size(A, 1)</code></p>
+<p><code>length(A)</code></p>
+<p><code>load</code></p>
+<p><code>who</code></p>
+<p><code>whos</code></p>
+<p><code>clear</code></p>
+<p><code>V = priceY(1 : 10)</code></p>
+<p><code>save hello.mat V</code></p>
+<p><code>save hello.txt V -ascii</code></p>
+<p><code>A(3, 2)</code></p>
+<p><code>A(2, : )</code></p>
+<p><code>A([1 3], : )</code></p>
+<p><code>A( : , 2) = [10; 11; 12]</code></p>
+<p><code>A[A, [100 : 200 : 300]]</code></p>
+<p><code>A( : )</code></p>
+<p><code>C = [A B]</code></p>
+<p><code>C = [A; B]</code></p>
+<h3 id="计算数据"><a href="#计算数据" class="headerlink" title="计算数据"></a>计算数据</h3><p><code>A * B</code></p>
+<p><code>A .* B</code></p>
+<p><code>A .^ B</code></p>
+<p><code>1 ./ A</code></p>
+<p><code>log(A)</code></p>
+<p><code>exp(A)</code></p>
+<p><code>abs(A)</code></p>
+<p><code>-V</code></p>
+<p><code>V + 1</code></p>
+<p><code>A&#39;</code></p>
+<p><code>val = max(a)</code></p>
+<p><code>[val, ind] = max(a)</code></p>
+<p><code>max(A)</code></p>
+<p><code>a &lt; 3</code></p>
+<p><code>find(a &lt; 3)</code></p>
+<p><code>[r, c] = find(A &gt; 0.7)</code></p>
+<p><code>sum(a)</code></p>
+<p><code>prod(a)</code></p>
+<p><code>floor(a)</code></p>
+<p><code>ceil(a)</code></p>
+<p><code>max(rand(3), rand(3))</code></p>
+<p><code>max(A, [], 1)</code></p>
+<p><code>max(max(A))</code></p>
+<p><code>sum(A, 1)</code></p>
+<p><code>flipud(A)</code></p>
+<p><code>pinv(A)</code></p>
+<h3 id="数据绘制"><a href="#数据绘制" class="headerlink" title="数据绘制"></a>数据绘制</h3><p><code>plot(x, y)</code></p>
+<p><code>hold on;</code></p>
+<p><code>xlable(&#39;time&#39;)</code></p>
+<p><code>legend(&#39;sin&#39;, cos&#39;&#39;)</code></p>
+<p><code>title(&#39;my plot&#39;)</code></p>
+<p><code>print -dpng &#39;myplot.png&#39;</code></p>
+<p><code>close</code></p>
+<p><code>figure(1); plot(t, y1);</code></p>
+<p><code>subplot(1, 2, 1);</code></p>
+<p><code>axis([0.5 1 -1 1])</code></p>
+<p><code>clf</code></p>
+<p><code>imggesc(A)</code></p>
+<p><code>imagesc(A), colorbar, colormap gray;</code></p>
+<h3 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">IamXGW</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/1009752504/">http://example.com/posts/1009752504/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">IamXGW</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/octave.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/alipay.jpeg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/alipay.jpeg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/wechatpay.jpeg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/wechatpay.jpeg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2004331048/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/mapplotlib.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Matplotlib的常见用法</div></div></a></div><div class="next-post pull-right"><a href="/posts/3096828/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">贰零贰零年十一月</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">IamXGW</div><div class="author-info__description">Hello World :)</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/IamXGW"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/IamXGW" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:iamxgw@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://twitter.com/IamXGW" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">本网站不定时更新！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85octave"><span class="toc-number">1.</span> <span class="toc-text">安装octave</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#octave%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">octave基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.</span> <span class="toc-text">移动数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%95%B0%E6%8D%AE"><span class="toc-number">2.3.</span> <span class="toc-text">计算数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%98%E5%88%B6"><span class="toc-number">2.4.</span> <span class="toc-text">数据绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.5.</span> <span class="toc-text">控制语句</span></a></li></ol></li></ol></div></div></div></div></div></main><footer id="footer" style="background: #FAFAFA"><div id="footer-wrap"><div class="copyright">&copy; 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> IamXGW | 框架 <a target="_blank" rel="noopener" href='https://hexo.io'>Hexo</a> | 主题 <a target="_blank" rel="noopener" href='https://github.com/jerryc127/hexo-theme-butterfly'>Butterfly</a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head><!--#footer-wrap--><!--  if theme.footer.owner.enable--><!--    - var now = new Date()--><!--    - var nowYear = now.getFullYear()--><!--    if theme.footer.owner.since && theme.footer.owner.since != nowYear--><!--      .copyright!= `&copy;${theme.footer.owner.since} - ${nowYear} By ${config.author}`--><!--    else--><!--      .copyright!= `&copy;${nowYear} By ${config.author}`--><!--  if theme.footer.copyright--><!--    .framework-info--><!--      span= _p('footer.framework') + ' '--><!--      a(href='https://hexo.io')= 'Hexo'--><!--      span.footer-separator |--><!--      span= _p('footer.theme') + ' '--><!--      a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'--><!--  if theme.footer.custom_text--><!--    .footer_custom_text!=`${theme.footer.custom_text}`--></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'd1671f644da78633eb55',
+      clientSecret: 'b81e5b01a78c43fe47403ca9b7850bfdb9b771ff',
+      repo: 'IamXGW.github.io',
+      owner: 'IamXGW',
+      admin: ['IamXGW'],
+      id: '3a79fd066ab5d015a7fb8e0f19a9c7e3',
+      language: 'zh-CN',
+      perPage: 9,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div></div></body></html>

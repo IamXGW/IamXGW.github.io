@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>刷题「树」相关 | IamXGW</title><meta name="keywords" content="LeetCode,树"><meta name="author" content="IamXGW"><meta name="copyright" content="IamXGW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="LeetCode刷题系列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刷题「树」相关">
+<meta property="og:url" content="http://example.com/posts/494471984/index.html">
+<meta property="og:site_name" content="IamXGW">
+<meta property="og:description" content="LeetCode刷题系列">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/treee.png">
+<meta property="article:published_time" content="2020-10-01T14:30:50.000Z">
+<meta property="article:modified_time" content="2020-10-01T14:31:50.000Z">
+<meta property="article:author" content="IamXGW">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="树">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/treee.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/favicon.ico"><link rel="canonical" href="http://example.com/posts/494471984/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8c61c88b53b633e29facebb0bb7d799b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-177423460-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-177423460-1');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: IamXGW","link":"链接: ","source":"来源: IamXGW","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-10-01 22:31:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/mouseStyle.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/treee.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">IamXGW</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">刷题「树」相关</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-01T14:30:50.000Z" title="发表于 2020-10-01 22:30:50">2020-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-01T14:31:50.000Z" title="更新于 2020-10-01 22:31:50">2020-10-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/LeetCode-%E5%88%B7%E9%A2%98%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">LeetCode 刷题之数据结构</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><h4 id="树的高度（简单）"><a href="#树的高度（简单）" class="headerlink" title="树的高度（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/description/">树的高度（简单）</a></h4><p>采用深度优先遍历。</p>
+<p>当<code>root is None</code>时，则<code>return 0</code>。</p>
+<p>否则，返回左、右子树深度的最大值 + 1。</p>
+<p>如果当前结点为空，则其高度为0。否则，就分别求其左、右子树的高度，然后取两个高度中的最大值 ，加1, 就是当前结点的高度。</p>
+<div class="tabs" id="1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#1-1">Python</button></li><li class="tab"><button type="button" data-href="#1-2">Java</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="1-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxDepth(self, root: TreeNode) -&gt; int:</span><br><span class="line">        return 0 if not root else max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(maxDepth(root.left), maxDepth(root.right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<hr>
+<h4 id="平衡二叉树（简单）"><a href="#平衡二叉树（简单）" class="headerlink" title="平衡二叉树（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/balanced-binary-tree/description/">平衡二叉树（简单）</a></h4><p>平衡二叉树：一个二叉树每个节点的左、右两个子树的高度差的绝对值不超过 1 。</p>
+<p>空树也是平衡树（左、右子树的高度差为0）。</p>
+<p>若不空，则计算当前节点左、右子树的高度差，如果高度差的绝对值不超过1，则平衡，否则不平衡。<br><div class="tabs" id="2"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#2-1">Python</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="2-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isBalanced(self, root: TreeNode) -&gt; bool:</span><br><span class="line">        def height(root: TreeNode) -&gt; int:</span><br><span class="line">            if not root:</span><br><span class="line">                return 0</span><br><span class="line">            return max(height(root.left), height(root.right)) + 1</span><br><span class="line"></span><br><span class="line">        if not root:</span><br><span class="line">            return True</span><br><span class="line">        return abs(height(root.left) - height(root.right)) &lt;&#x3D; 1 and self.isBalanced(root.left) and self.isBalanced(root.right)</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div></p>
+<p>下面提供另一种解法。</p>
+<p>分别求左、右子树的高度，然后判断左、右子树的高度差。以及左、右子树的高度是否等于-1（-1的由来：如果当前结点的孩子节点的左、右子树的高度差大于1，那么就会返回-1）。</p>
+<p>最后，判断根节点的高度是不是大于等于0。因为只要是树中有一个结点不是平衡树，则整棵树就不是平衡树。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">height</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( root == <span class="keyword">null</span> ) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> leftHeight = height(root.left);</span><br><span class="line">        <span class="keyword">int</span> rightHeight = height(root.right);</span><br><span class="line">        <span class="keyword">if</span>((Math.abs(leftHeight - rightHeight) &gt; <span class="number">1</span>) || leftHeight == -<span class="number">1</span> || rightHeight == -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(leftHeight, rightHeight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> height(root) &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="两节点的最长路径（简单）"><a href="#两节点的最长路径（简单）" class="headerlink" title="两节点的最长路径（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/diameter-of-binary-tree/description/">两节点的最长路径（简单）</a></h4><p>题目中说「这条路径可能穿过也可能不穿过根结点」，所以对于每一棵子树的根节点，都可能是直径路径经过的结点。如图，根节点为<code>2</code>的这棵子树就是正确答案。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/1_2_3_1.jpeg" alt=""></p>
+<p>定义全局变量<code>ans</code>表示要求的直径长度所经过的结点个数。路径长度为两节点间经过的<em>边</em>的个数，也就等于结点数减1。所以最后求的直径长度为<code>ans - 1</code>。</p>
+<p>下面我们分别求左、右子树的高度，然后<code>+1</code>，也就是所经过的结点个数。再和<code>ans</code>比较，取数值大者。</p>
+<p>最后将<code>ans - 1</code>就是正确结果。<br><div class="tabs" id="1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#1-1">Python</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="1-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def diameterOfBinaryTree(self, root: TreeNode) -&gt; int:</span><br><span class="line">        self.ans &#x3D; 1</span><br><span class="line">        def height(root):</span><br><span class="line">            if not root:</span><br><span class="line">                return 0</span><br><span class="line">            leftHeight &#x3D; height(root.left)</span><br><span class="line">            rightHeight &#x3D; height(root.right)</span><br><span class="line">            self.ans &#x3D; max(self.ans, leftHeight + rightHeight + 1)</span><br><span class="line">            return max(leftHeight, rightHeight) + 1</span><br><span class="line">        height(root)</span><br><span class="line">        return self.ans - 1</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div></p>
+<hr>
+<h4 id="翻转树（简单）"><a href="#翻转树（简单）" class="headerlink" title="翻转树（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/description/">翻转树（简单）</a></h4><p>？？？？？？？？？？？？？？？？？</p>
+<p>下面这个解法1是我挖的一个坑。↓。中计了。</p>
+<p>在二叉树的遍历算法上做更改。</p>
+<p>其实就是一个前序遍历，不过就是将打印结点值换成了交换结点值。</p>
+<p>那中序遍历、后续遍历行不行呢？答案是，前序、后序遍历可以，中序遍历就不可以。那为什么中序不可以呢？</p>
+<p>？？？？？？？？？？？？？？？？？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 正解1</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def invertTree(self, root: TreeNode) -&gt; TreeNode:</span><br><span class="line">        if not root:</span><br><span class="line">            return None</span><br><span class="line">            </span><br><span class="line">        t &#x3D; root.left</span><br><span class="line">        root.left &#x3D; root.right</span><br><span class="line">        root.right &#x3D; t</span><br><span class="line">        </span><br><span class="line">        self.invertTree(root.left)</span><br><span class="line">        self.invertTree(root.right)</span><br><span class="line">        return root</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正解2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">invertTree</span>(<span class="params">self, root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="归并两棵树（简单）"><a href="#归并两棵树（简单）" class="headerlink" title="归并两棵树（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-binary-trees/description/">归并两棵树（简单）</a></h4><p>该题就是创建一个二叉树，不过创建的数据来自两棵二叉树。</p>
+<p>我再贴一个创建二叉树的算法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正解</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTrees</span>(<span class="params">self, t1: TreeNode, t2: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> t1:</span><br><span class="line">            <span class="keyword">return</span> t2</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> t2:</span><br><span class="line">            <span class="keyword">return</span> t1</span><br><span class="line"></span><br><span class="line">        merged = TreeNode(t1.val + t2.val)</span><br><span class="line">        merged.left = self.mergeTrees(t1.left, t2.left)</span><br><span class="line">        merged.right = self.mergeTrees(t1.right, t2.right)</span><br><span class="line">        <span class="keyword">return</span> merged</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建二叉树</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createBT</span>(<span class="params">root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">    data = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span> d == `<span class="comment">#`:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    root = TreeNode(d)</span><br><span class="line">    root.left = createBT(root.left)</span><br><span class="line">    root.right = createBT(root.right)</span><br><span class="line">    <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="判断路径和是否等于一个数（简单）"><a href="#判断路径和是否等于一个数（简单）" class="headerlink" title="判断路径和是否等于一个数（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum/description/">判断路径和是否等于一个数（简单）</a></h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正解</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasPathSum</span>(<span class="params">self, root: TreeNode, <span class="built_in">sum</span>: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root.left <span class="keyword">and</span> <span class="keyword">not</span> root.right:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">sum</span> == root.val</span><br><span class="line">        <span class="keyword">return</span> self.hasPathSum(root.left, <span class="built_in">sum</span> - root.val) <span class="keyword">or</span> self.hasPathSum(root.right, <span class="built_in">sum</span> - root.val)</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasPathSum</span>(<span class="params">self, root: TreeNode, <span class="built_in">sum</span>: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        que_node = collections.deque([root])</span><br><span class="line">        que_val = collections.deque([root.val])</span><br><span class="line">        <span class="keyword">while</span> que_node:</span><br><span class="line">            now = que_node.popleft()</span><br><span class="line">            temp = que_val.popleft()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> now.left <span class="keyword">and</span> <span class="keyword">not</span> now.right:</span><br><span class="line">                <span class="keyword">if</span> temp == <span class="built_in">sum</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> now.left:</span><br><span class="line">                que_node.append(now.left)</span><br><span class="line">                que_val.append(now.left.val + temp)</span><br><span class="line">            <span class="keyword">if</span> now.right:</span><br><span class="line">                que_node.append(now.right)</span><br><span class="line">                que_val.append(now.right.val + temp)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h4 id="统计路径和等于一个数的路径数量（中等）"><a href="#统计路径和等于一个数的路径数量（中等）" class="headerlink" title="统计路径和等于一个数的路径数量（中等）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-iii/description/">统计路径和等于一个数的路径数量（中等）</a></h4><hr>
+<h4 id="子树（简单）"><a href="#子树（简单）" class="headerlink" title="子树（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subtree-of-another-tree/description/">子树（简单）</a></h4><p>用到了判断两棵树是否相等的算法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSubtree</span>(<span class="params">self, s: TreeNode, t: TreeNode</span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">and</span> <span class="keyword">not</span> t:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> <span class="keyword">not</span> t:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> self.isSameTree(s, t) <span class="keyword">or</span> self.isSubtree(s.left, t) <span class="keyword">or</span> self.isSubtree(s.right, t)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span>(<span class="params">self, s, t</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">and</span> <span class="keyword">not</span> t:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s <span class="keyword">or</span> <span class="keyword">not</span> t:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> s.val == t.val <span class="keyword">and</span> self.isSameTree(s.left, t.left) <span class="keyword">and</span> self.isSameTree(s.right, t.right)</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="树的对称（简单）"><a href="#树的对称（简单）" class="headerlink" title="树的对称（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/description/">树的对称（简单）</a></h4><hr>
+<h4 id="最小路径（简单）"><a href="#最小路径（简单）" class="headerlink" title="最小路径（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/description/">最小路径（简单）</a></h4><hr>
+<h4 id="统计左叶子节点的和（简单）"><a href="#统计左叶子节点的和（简单）" class="headerlink" title="统计左叶子节点的和（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-left-leaves/description/">统计左叶子节点的和（简单）</a></h4><hr>
+<h4 id="相同节点值的最大路径长度（中等）"><a href="#相同节点值的最大路径长度（中等）" class="headerlink" title="相同节点值的最大路径长度（中等）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-univalue-path/">相同节点值的最大路径长度（中等）</a></h4><hr>
+<h4 id="间隔遍历（中等）"><a href="#间隔遍历（中等）" class="headerlink" title="间隔遍历（中等）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/house-robber-iii/description/">间隔遍历（中等）</a></h4><hr>
+<h4 id="找出二叉树中第二小的节点（简单）"><a href="#找出二叉树中第二小的节点（简单）" class="headerlink" title="找出二叉树中第二小的节点（简单）"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/description/">找出二叉树中第二小的节点（简单）</a></h4><hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">IamXGW</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/494471984/">http://example.com/posts/494471984/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">IamXGW</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LeetCode/">LeetCode</a><a class="post-meta__tags" href="/tags/%E6%A0%91/">树</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/treee.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/alipay.jpeg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/alipay.jpeg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/wechatpay.jpeg" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/wechatpay.jpeg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/369926292/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/leetcoding/matrix.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">刷题「数组与矩阵」相关</div></div></a></div><div class="next-post pull-right"><a href="/posts/3775416685/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.7/img/postImg/leetcoding/list.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">刷题「链表」相关</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/1477059771/" title="刷题「栈和队列」相关"><img class="cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/leetcoding/stack.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-06-13</div><div class="title">刷题「栈和队列」相关</div></div></a></div><div><a href="/posts/369926292/" title="刷题「数组与矩阵」相关"><img class="cover" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.4/img/postImg/leetcoding/matrix.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2020-10-01</div><div class="title">刷题「数组与矩阵」相关</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">IamXGW</div><div class="author-info__description">Hello World :)</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/IamXGW"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/IamXGW" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:iamxgw@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://twitter.com/IamXGW" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">本网站不定时更新！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.</span> <span class="toc-text">递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">树的高度（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">平衡二叉树（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E8%8A%82%E7%82%B9%E7%9A%84%E6%9C%80%E9%95%BF%E8%B7%AF%E5%BE%84%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">两节点的最长路径（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BF%BB%E8%BD%AC%E6%A0%91%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">翻转树（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E4%B8%A4%E6%A3%B5%E6%A0%91%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">归并两棵树（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%B7%AF%E5%BE%84%E5%92%8C%E6%98%AF%E5%90%A6%E7%AD%89%E4%BA%8E%E4%B8%80%E4%B8%AA%E6%95%B0%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.6.</span> <span class="toc-text">判断路径和是否等于一个数（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E8%B7%AF%E5%BE%84%E5%92%8C%E7%AD%89%E4%BA%8E%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E8%B7%AF%E5%BE%84%E6%95%B0%E9%87%8F%EF%BC%88%E4%B8%AD%E7%AD%89%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">统计路径和等于一个数的路径数量（中等）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E6%A0%91%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.8.</span> <span class="toc-text">子树（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E5%AF%B9%E7%A7%B0%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.9.</span> <span class="toc-text">树的对称（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">最小路径（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%B7%A6%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E7%9A%84%E5%92%8C%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.11.</span> <span class="toc-text">统计左叶子节点的和（简单）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E8%8A%82%E7%82%B9%E5%80%BC%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6%EF%BC%88%E4%B8%AD%E7%AD%89%EF%BC%89"><span class="toc-number">1.12.</span> <span class="toc-text">相同节点值的最大路径长度（中等）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%B4%E9%9A%94%E9%81%8D%E5%8E%86%EF%BC%88%E4%B8%AD%E7%AD%89%EF%BC%89"><span class="toc-number">1.13.</span> <span class="toc-text">间隔遍历（中等）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%BE%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-number">1.14.</span> <span class="toc-text">找出二叉树中第二小的节点（简单）</span></a></li></ol></li></ol></div></div></div></div></div></main><footer id="footer" style="background: #FAFAFA"><div id="footer-wrap"><div class="copyright">&copy; 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> IamXGW | 框架 <a target="_blank" rel="noopener" href='https://hexo.io'>Hexo</a> | 主题 <a target="_blank" rel="noopener" href='https://github.com/jerryc127/hexo-theme-butterfly'>Butterfly</a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head><!--#footer-wrap--><!--  if theme.footer.owner.enable--><!--    - var now = new Date()--><!--    - var nowYear = now.getFullYear()--><!--    if theme.footer.owner.since && theme.footer.owner.since != nowYear--><!--      .copyright!= `&copy;${theme.footer.owner.since} - ${nowYear} By ${config.author}`--><!--    else--><!--      .copyright!= `&copy;${nowYear} By ${config.author}`--><!--  if theme.footer.copyright--><!--    .framework-info--><!--      span= _p('footer.framework') + ' '--><!--      a(href='https://hexo.io')= 'Hexo'--><!--      span.footer-separator |--><!--      span= _p('footer.theme') + ' '--><!--      a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'--><!--  if theme.footer.custom_text--><!--    .footer_custom_text!=`${theme.footer.custom_text}`--></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'd1671f644da78633eb55',
+      clientSecret: 'b81e5b01a78c43fe47403ca9b7850bfdb9b771ff',
+      repo: 'IamXGW.github.io',
+      owner: 'IamXGW',
+      admin: ['IamXGW'],
+      id: 'dc9f09df1fb370bbbc69f7ccf10047c0',
+      language: 'zh-CN',
+      perPage: 9,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div></div></body></html>
