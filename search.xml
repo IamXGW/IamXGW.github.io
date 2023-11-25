@@ -8,7 +8,7 @@
       <link href="/posts/3487777106/"/>
       <url>/posts/3487777106/</url>
       
-        <content type="html"><![CDATA[<p>换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p>]]></content>
+        <content type="html"><![CDATA[<p>换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p><ol><li><p>要在新 Mac 上安装 Hexo 首先需要有 <a href="https://brew.sh">Homebrew</a>。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 ‘/etc/hosts’ 文件中配置 GitHub，但是没起作用。最终解决方法：<a href="https://blog.csdn.net/timtian008/article/details/108465820">使用国内镜像安装 Homebrew</a></p></li><li><p>装好 Homebrew 以后，可以去到 <a href="https://hexo.io">Hexo 官网</a>，按官网提示安装 Hexo</p><ol><li>‘npm install hexo-cli -g’ 安装 hexo</li><li>‘cd blog’ 进到本地自己的博客文件夹中</li><li>‘npm install’</li></ol></li><li>将博客文件部署到 github.io 上<ol><li>去到博客根文件下修改 ‘_config.yml’，将 GitHub 的部署方式修改为 SSH 方式 ‘github: git@github.com:userName/userName.github.io.git’</li><li>按照 <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a> 一步一步的设置 SSH</li><li>在博客根目录运行 ‘hexo deploy -g’</li></ol></li></ol>]]></content>
       
       
       
