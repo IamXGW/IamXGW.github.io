@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title></title>
-      <link href="/posts/0/"/>
-      <url>/posts/0/</url>
+      <title>在GitHub上部署Hexo网站</title>
+      <link href="/posts/3487777106/"/>
+      <url>/posts/3487777106/</url>
       
-        <content type="html"><![CDATA[<p>-—</p><p>title: 在GitHub上部署Hexo网站</p><p>cover: &gt;-</p><p> <a href="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg">https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg</a></p><p>toc_number: true</p><p>mathjax: true</p><p>date: 2023-11-25 12:18:41</p><p>tags:</p><p>categories:</p><p>description:</p><p>-—</p><p>换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p>]]></content>
+        <content type="html"><![CDATA[<p>换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p>]]></content>
       
       
       
