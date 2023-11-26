@@ -1,14 +1,14 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在GitHub上部署Hexo网站 | IamXGW</title><meta name="keywords" content="blog IamXGW"><meta name="author" content="IamXGW"><meta name="copyright" content="IamXGW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅  要在新 Mac 上安装 Hexo 首先需要有 Homebrew。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 &#x2F;etc&#x2F;hosts 文件中配置 GitHub，但是没起作用。最终解决方法：使用国内镜像安装 Homebrew  装好 Homebrew 以后，可以去">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在GitHub上部署Hexo网站 | IamXGW</title><meta name="keywords" content="blog IamXGW"><meta name="author" content="IamXGW"><meta name="copyright" content="IamXGW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="换电脑好久了，个人网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅  要在新 Mac 上安装 Hexo 首先需要有 Homebrew。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 &#x2F;etc&#x2F;hosts 文件中配置 GitHub，但是没起作用。最终解决方法：使用国内镜像安装 Homebrew  装好 Homebrew 以后，可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在GitHub上部署Hexo网站">
 <meta property="og:url" content="http://example.com/posts/3487777106/index.html">
 <meta property="og:site_name" content="IamXGW">
-<meta property="og:description" content="换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅  要在新 Mac 上安装 Hexo 首先需要有 Homebrew。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 &#x2F;etc&#x2F;hosts 文件中配置 GitHub，但是没起作用。最终解决方法：使用国内镜像安装 Homebrew  装好 Homebrew 以后，可以去">
+<meta property="og:description" content="换电脑好久了，个人网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅  要在新 Mac 上安装 Hexo 首先需要有 Homebrew。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 &#x2F;etc&#x2F;hosts 文件中配置 GitHub，但是没起作用。最终解决方法：使用国内镜像安装 Homebrew  装好 Homebrew 以后，可">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="
 https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg">
 <meta property="article:published_time" content="2023-11-25T04:18:41.000Z">
-<meta property="article:modified_time" content="2023-11-26T14:25:34.196Z">
+<meta property="article:modified_time" content="2023-11-26T14:41:50.960Z">
 <meta property="article:author" content="IamXGW">
 <meta property="article:tag" content="blog IamXGW">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-11-26 22:25:34'
+  postUpdate: '2023-11-26 22:41:50'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -158,7 +158,7 @@ if (asideStatus !== undefined) {
      document.documentElement.classList.remove('hide-aside')
    }
 }})()</script><link rel="stylesheet" href="/css/mouseStyle.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.19/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">32</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(
-https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">IamXGW</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">在GitHub上部署Hexo网站</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-25T04:18:41.000Z" title="发表于 2023-11-25 12:18:41">2023-11-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-26T14:25:34.196Z" title="更新于 2023-11-26 22:25:34">2023-11-26</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">266</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>换电脑好久了，网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p>
+https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">IamXGW</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">在GitHub上部署Hexo网站</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-25T04:18:41.000Z" title="发表于 2023-11-25 12:18:41">2023-11-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-26T14:41:50.960Z" title="更新于 2023-11-26 22:41:50">2023-11-26</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">412</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>换电脑好久了，个人网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p>
 <ol>
 <li><p>要在新 Mac 上安装 Hexo 首先需要有 <a target="_blank" rel="noopener" href="https://brew.sh">Homebrew</a>。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 <code>/etc/hosts</code> 文件中配置 GitHub，但是没起作用。最终解决方法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/timtian008/article/details/108465820">使用国内镜像安装 Homebrew</a></p>
 </li>
@@ -177,12 +177,22 @@ https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@2.1.14/img/aboutme.jpe
 </ol>
 </li>
 <li><p>配置图片 CDN</p>
+<pre><code> 1. 去到 [uPic 官网](https://blog.svend.cc/upic/en/)参考下载命令
+ 2. 在 uPic 中进行如下设置
+</code></pre><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-11-26%20at%2022.29.172023%2011%2026%2022%2035%2038" alt="Screenshot 2023-11-26 at 22.29.17"></p>
+<p>其中，token 需要去到 GitHub - Setting - Developer Settings - Personal access tokens 获取。注意：该 token 只有在生成的时候显示一次，需要及时记录下来</p>
+<ol>
+<li>去到 Typora 中进行如下设置</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-11-26%20at%2022.32.332023%2011%2026%2022%2035%2025" alt="Screenshot 2023-11-26 at 22.32.33"></p>
+<p>Image Uploader 选择 uPic，然后点击「test Uploader」显示 Succee 说明配置成功</p>
+<ol>
+<li>使用：当在 Typora 中插入一张图片后，右键该图片，选择「Upload Image」，此时该图片的地址会由本地的存储地址切换为 CDN 的地址</li>
+</ol>
 </li>
 <li><p>Hexo 常用命令</p>
 <ol>
-<li><p><code>hexo new title</code> 创建新的文章，<code>title</code> 为名章标题</p>
-<p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-11-26%20at%2022.23.132023%2011%2026%2022%2023%20192023%2011%2026%2022%2025%2030" alt="Screenshot 2023-11-26 at 22.23.13"></p>
-</li>
+<li><code>hexo new title</code> 创建新的文章，<code>title</code> 为文章标题</li>
 </ol>
 </li>
 </ol>
