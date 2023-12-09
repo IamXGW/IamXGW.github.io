@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>comment</title>
+      <link href="/posts/undefined/"/>
+      <url>/posts/undefined/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Class-comment"><a href="#Class-comment" class="headerlink" title="Class comment"></a>Class comment</h3><p>IDEA - Settings - Editor - File and Code Templates - Class</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@description</span>: $&#123;description&#125;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span>: YOUR NAME or &#123;USER&#125;</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@create</span>: $&#123;YEAR&#125;-$&#123;MONTH&#125;-$&#123;DAY&#125; $&#123;HOUR&#125;:$&#123;MINUTE&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.09.482023%2012%2009%2014%2027%2034" alt="enter template"></p><hr><h3 id="Method-Comment"><a href="#Method-Comment" class="headerlink" title="Method Comment"></a>Method Comment</h3><p>IDEA - Settings - Editor - Live Templates - create a new Template Groups. I my case i create a Template Groups named “Method Comment”.</p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.14.592023%2012%2009%2014%2033%20192023%2012%2009%2014%2033%2029" alt="create a new tmplate groups"></p><p>Then select “Method Comment” add a new Live Template</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Description</span>: $description$</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Param</span>: $params$</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span>: $returns$</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Author</span>: IamXGW</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Date</span>: $date$</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><p>Input Abbreviation, you will use this Abbreviation to create your method comment</p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.25.142023%2012%2009%2014%2033%2033" alt="enter template"></p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.22.502023%2012%2009%2014%2033%2042" alt="sellet application in"></p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.25.392023%2012%2009%2014%2033%2058" alt="edit variables"></p><hr><h3 id="USE"><a href="#USE" class="headerlink" title="USE"></a>USE</h3><h4 id="Class-Comment"><a href="#Class-Comment" class="headerlink" title="Class Comment"></a>Class Comment</h4><p>When you create a new Java class, class comment will auto create.</p><h4 id="Method-Comment-1"><a href="#Method-Comment-1" class="headerlink" title="Method Comment"></a>Method Comment</h4><ul><li>Create a new method</li><li>Input your abbreviation at new added method top, in my case, i will input “mc”</li><li>Then, you will get a method comment</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在GitHub上部署Hexo网站</title>
       <link href="/posts/3487777106/"/>
       <url>/posts/3487777106/</url>
