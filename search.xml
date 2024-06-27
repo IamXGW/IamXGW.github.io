@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>Linux 安装 MySQL 和 Redis</title>
-      <link href="/posts/3475225673/"/>
-      <url>/posts/3475225673/</url>
-      
-        <content type="html"><![CDATA[<h3 id="Install-MySql"><a href="#Install-MySql" class="headerlink" title="Install MySql"></a>Install MySql</h3><ol><li><code>docker docker pull mysql:5.7</code> </li><li><code>docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -v /data/mysql_data:/var/lib/mysql mysql:5.7</code></li><li><code>docker exec -it mysql bash</code></li><li><code>mysql -uroot -proot</code></li></ol><h3 id="Install-Redis"><a href="#Install-Redis" class="headerlink" title="Install Redis"></a>Install Redis</h3><ol><li><code>docker pull redis:5</code></li><li><code>docker run -p 6379:6379 --name redis -d redis:5 redis-server --appendonly yes</code></li></ol>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>IDEA create class and method comment use template</title>
       <link href="/posts/1774144165/"/>
       <url>/posts/1774144165/</url>
@@ -62,19 +49,6 @@
             <tag> 年终总结 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>各类DP问题</title>
-      <link href="/posts/1025277118/"/>
-      <url>/posts/1025277118/</url>
-      
-        <content type="html"><![CDATA[<h4 id="数位-DP"><a href="#数位-DP" class="headerlink" title="数位 DP"></a>数位 DP</h4><hr><h4 id="序列-DP"><a href="#序列-DP" class="headerlink" title="序列 DP"></a>序列 DP</h4>]]></content>
-      
-      
       
     </entry>
     
@@ -132,50 +106,6 @@
             <tag> 排序 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>AStar算法</title>
-      <link href="/posts/3803732996/"/>
-      <url>/posts/3803732996/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 图 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>线段树</title>
-      <link href="/posts/2291390787/"/>
-      <url>/posts/2291390787/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构 </category>
-          
-      </categories>
-      
       
     </entry>
     
