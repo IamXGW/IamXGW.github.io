@@ -36,6 +36,18 @@
         <content type="html"><![CDATA[<h3 id="Class-comment"><a href="#Class-comment" class="headerlink" title="Class comment"></a>Class comment</h3><p>IDEA - Settings - Editor - File and Code Templates - Class</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: $&#123;description&#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: YOUR NAME or &#123;USER&#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: $&#123;YEAR&#125;-$&#123;MONTH&#125;-$&#123;DAY&#125; $&#123;HOUR&#125;:$&#123;MINUTE&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.09.482023%2012%2009%2014%2027%2034" alt="enter template"></p><hr><h3 id="Method-Comment"><a href="#Method-Comment" class="headerlink" title="Method Comment"></a>Method Comment</h3><p>IDEA - Settings - Editor - Live Templates - create a new Template Groups. I my case i create a Template Groups named “Method Comment”.</p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.14.592023%2012%2009%2014%2033%20192023%2012%2009%2014%2033%2029" alt="create a new tmplate groups"></p><p>Then select “Method Comment” add a new Live Template</p><p><strong>NOTICE: there is no / in first line</strong></p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@Description</span>: $description$</span><br><span class="line"> * <span class="meta">@Param</span>: $params$</span><br><span class="line"> * <span class="meta">@return</span>: $returns$</span><br><span class="line"> * <span class="meta">@Author</span>: IamXGW</span><br><span class="line"> * <span class="meta">@Date</span>: $date$</span><br><span class="line"> */</span><br></pre></td></tr></table></figure><p>Input Abbreviation, you will use this Abbreviation to create your method comment</p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2016.15.082023%2012%2009%2016%2016%2002" alt="enter template"></p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.22.502023%2012%2009%2014%2033%2042" alt="sellet application in"></p><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-12-09%20at%2014.25.392023%2012%2009%2014%2033%2058" alt="edit variables"></p><hr><h3 id="USE"><a href="#USE" class="headerlink" title="USE"></a>USE</h3><h4 id="Class-Comment"><a href="#Class-Comment" class="headerlink" title="Class Comment"></a>Class Comment</h4><p>When you create a new Java class, class comment will auto create.</p><h4 id="Method-Comment-1"><a href="#Method-Comment-1" class="headerlink" title="Method Comment"></a>Method Comment</h4><ul><li>Create a new method</li><li>Input “/ + your abbreviation + Enter” at the new added method top, in my case, i will input “/ + mc + Enter”</li><li>Then, you will get a method comment</li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
       
     </entry>
     
@@ -49,6 +61,18 @@
         <content type="html"><![CDATA[<p>换电脑好久了，个人网站一直拖着没有部署。今天决定要搞一下，发现很多步骤都忘记了，因此写篇帖子记录一下，方便以后查阅</p><ol><li><p>要在新 Mac 上安装 Hexo 首先需要有 <a href="https://brew.sh">Homebrew</a>。Homebrew 官网推荐的安装方式因为某些特殊原因，一直报错。尝试在 <code>/etc/hosts</code> 文件中配置 GitHub，但是没起作用。最终解决方法：<a href="https://blog.csdn.net/timtian008/article/details/108465820">使用国内镜像安装 Homebrew</a></p></li><li><p>装好 Homebrew 以后，可以去到 <a href="https://hexo.io">Hexo 官网</a>，按官网提示安装 Hexo</p><ol><li><code>npm install hexo-cli -g</code> 安装 hexo</li><li><code>cd blog</code> 进到本地自己的博客文件夹中</li><li><code>npm install</code></li></ol></li><li><p>将博客文件部署到 github.io 上</p><ol><li>去到博客根文件下修改 <code>_config.yml</code>，将 GitHub 的部署方式修改为 SSH 方式 <code>github: git@github.com:userName/userName.github.io.git</code></li><li>按照 <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent</a> 一步一步的设置 SSH</li><li>在博客根目录运行 <code>hexo deploy -g</code></li></ol></li><li><p>配置图片 CDN</p><pre><code> 1. 去到 [uPic 官网](https://blog.svend.cc/upic/en/)参考下载命令 2. 在 uPic 中进行如下设置</code></pre><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-11-26%20at%2022.29.172023%2011%2026%2022%2035%2038" alt="Screenshot 2023-11-26 at 22.29.17"></p><p>其中，token 需要去到 GitHub - Setting - Developer Settings - Personal access tokens 获取。注意：该 token 只有在生成的时候显示一次，需要及时记录下来</p><ol><li>去到 Typora 中进行如下设置</li></ol><p><img src="https://cdn.jsdelivr.net/gh/IamXGW/CDN-for-xuguangwei.com@main/uPic/Screenshot%202023-11-26%20at%2022.32.332023%2011%2026%2022%2035%2025" alt="Screenshot 2023-11-26 at 22.32.33"></p><p>Image Uploader 选择 uPic，然后点击「test Uploader」显示 Succee 说明配置成功</p><ol><li>使用：当在 Typora 中插入一张图片后，右键该图片，选择「Upload Image」，此时该图片的地址会由本地的存储地址切换为 CDN 的地址</li></ol></li><li><p>Hexo 常用命令</p><ol><li><code>hexo new title</code> 创建新的文章，<code>title</code> 为文章标题</li></ol></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 我的生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站搭建 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -141,12 +165,14 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -222,10 +248,16 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 生活记录 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -343,10 +375,18 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 回溯 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -387,12 +427,14 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -693,7 +735,7 @@
       
       <categories>
           
-          <category> 有趣的知识 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -701,6 +743,8 @@
         <tags>
             
             <tag> C++ </tag>
+            
+            <tag> 有趣的知识 </tag>
             
         </tags>
       
@@ -843,7 +887,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -851,6 +895,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -868,7 +914,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -876,6 +922,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -918,7 +966,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -926,6 +974,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -1020,7 +1070,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1028,6 +1078,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -1180,7 +1232,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1188,6 +1240,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -1361,7 +1415,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1369,6 +1423,8 @@
         <tags>
             
             <tag> 日更 </tag>
+            
+            <tag> 生活记录 </tag>
             
         </tags>
       
@@ -1386,14 +1442,16 @@
       
       <categories>
           
-          <category> 个人成长 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 表达技巧 </tag>
+            <tag> 读书笔记 </tag>
+            
+            <tag> 个人成长 </tag>
             
         </tags>
       
