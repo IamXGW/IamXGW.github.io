@@ -64,7 +64,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -114,10 +114,18 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -158,10 +166,18 @@
       
       <categories>
           
-          <category> 数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -177,7 +193,7 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -185,6 +201,8 @@
         <tags>
             
             <tag> 图 </tag>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -223,12 +241,14 @@
       
       <categories>
           
-          <category> 数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 数组 </tag>
             
@@ -248,14 +268,14 @@
       
       <categories>
           
-          <category> 算法竞赛 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 竞赛 </tag>
+            <tag> 牛客网 </tag>
             
         </tags>
       
@@ -342,7 +362,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -392,12 +412,14 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -417,12 +439,14 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -467,12 +491,14 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 排序 </tag>
             
@@ -492,7 +518,7 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -500,6 +526,8 @@
         <tags>
             
             <tag> 动态规划 </tag>
+            
+            <tag> 0-1背包 </tag>
             
         </tags>
       
@@ -567,7 +595,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -640,14 +668,14 @@
       
       <categories>
           
-          <category> CSAPP 深入理解计算机系统 </category>
+          <category> 后端开发 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CSAPP 家庭作业答案 </tag>
+            <tag> CSAPP 深入理解计算机系统家庭作业答案 </tag>
             
         </tags>
       
@@ -690,14 +718,14 @@
       
       <categories>
           
-          <category> CSAPP 深入理解计算机系统 </category>
+          <category> 后端开发 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> CSAPP 家庭作业答案 </tag>
+            <tag> CSAPP 深入理解计算机系统家庭作业答案 </tag>
             
         </tags>
       
@@ -765,10 +793,16 @@
       
       <categories>
           
-          <category> 文章分享 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 文章分享 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -784,14 +818,14 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 我 </tag>
+            <tag> 生活习惯 </tag>
             
         </tags>
       
@@ -859,14 +893,14 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 个人总结 </tag>
+            <tag> 年终总结 </tag>
             
         </tags>
       
@@ -909,7 +943,7 @@
       
       <categories>
           
-          <category> 读书 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1171,7 +1205,7 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1275,7 +1309,7 @@
       
       <categories>
           
-          <category> 深度学习 </category>
+          <category> 人工智能 </category>
           
       </categories>
       
@@ -1377,14 +1411,14 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 个人总结 </tag>
+            <tag> 年终总结 </tag>
             
         </tags>
       
