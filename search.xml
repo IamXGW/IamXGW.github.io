@@ -412,10 +412,16 @@
       
       <categories>
           
-          <category> 生活 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 桌面布局 </tag>
+            
+        </tags>
       
     </entry>
     
