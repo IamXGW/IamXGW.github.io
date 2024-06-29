@@ -11,6 +11,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 后端开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PostgreSQL </tag>
+            
+        </tags>
       
     </entry>
     
@@ -75,6 +87,18 @@
         <content type="html"><![CDATA[<p>力扣题目：<a href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/">Find the Index of the First Occurrence in a String</a></p><p>给定原串 <code>s</code> 长度为 <code>n</code>，模式串 <code>p</code> 长度为 <code>m</code>。</p><p>先给个暴力解法：</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = s.length(), m = t.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> idx = <span class="number">0</span>; idx &lt;= n - m; idx++) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = idx, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> ( ; j &lt; m; ++i, ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) != t.charAt(j)) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (j == m) <span class="keyword">return</span> idx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>首先，KMP（Knuth–Morris–Pratt algorithm）和暴力解法的不同之处是，当遇到不相同的字符时，暴力解法采取的措施是：原串指针回到本次开始位置的下一个位置，模式串指针回到第一个位置。而 KMP 采取的措施是：原串指针保持不动，模式串指针回到已匹配模式串的相同前缀的下一个位置。</p><ol><li>为什么当遇到原串和模式串不匹配时，需要回到<strong>已匹配</strong>的模式串的「相同前缀」的下一个位置？</li></ol><p>相同前缀指的是，如果一个字符串中包含相同的前缀和后缀，比如 <code>aabbaa</code> 包含相同的前缀和后缀，都为 <code>aa</code>，那么叫这个前缀为相同前缀（我自己起的名）。</p><p>如果已匹配模式串中存在相同前缀和后缀，并且后缀的最后一个字符和原串未匹配位置字符相同，这时只需要从相同前缀的下一个位置开始和原串不匹配字符处继续往下比较即可。如果模式串中不存在相同的前缀和后缀，那就只能从模式串的第一个字符开始，继续往下和原串进行比较。</p><p>举例子：原串 acbacc，模式串 acbacb，如果现在该比较的是第 6 个字符，发现不相同（c != b），此时应该检查模式串不匹配位置前一个字符是什么（模式串第 5 个字符是 c），发现和原串不匹配字符 c 相同，那么下一轮开始比较的位置应该是：原串第 6 个字符，模式串第 3 个字符。</p><p>如果我们事先不知道已匹配模式串中的相同的前、后缀的位置，那么每当遇到原串和模式串不匹配的时候，我们都要重新扫描一遍模式串的已匹配部分，看是否存在相同的前、后缀，并据此判断模式串下次匹配开始的位置，这个不断扫描查找相同前、后缀过程的时间复杂度是 <code>O(m^2)</code> 的，总体复杂度是 <code>O(n * m^2)</code>，这显然比暴力解法 <code>O(n * m)</code> 更慢。那怎么处理呢？</p><ol><li><code>next</code> 数组是干嘛用的？是怎么生成的？是怎么使用的？</li></ol><p>可以考虑用空间换时间，预先将模式串中每个位置如果不匹配，下次应该跳转的位置给记录下来，放到 <code>next</code> 数组中，那么在遇到不匹配的情况，就可以直接在 <code>next</code> 数组中很快的找出模式串下次匹配应该开始的位置。 那么 <code>next</code> 数组应该怎么生成呢？</p><p>生成 next 的具体步骤：</p><ul><li>初始化：<code>int[] next = new int[m]; int j = 0, i = 1;</code></li><li>如果匹配（p[j] == p[i]）：<code>next[i] = j + 1; ++i; ++j;</code></li><li>如果不匹配（p[j] ！= p[i]）：令 <code>j = next[j - 1]</code>，之后如果匹配，则返回上个步骤；如果不匹配，继续令 <code>j = next[j - 1]</code>，直到 <code>j == 0</code>，此时将 <code>next[i] = j</code>。虽然这里有使用 <code>while</code> 循环，但是时间复杂度应该并不是 <code>O(m)</code>的。</li></ul><p>下面是生成 <code>next</code> 数组的完整代码。其中代码的逻辑和上述步骤相同，但是将上述步骤进行了一些合并，具体请见代码。</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">    <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; p[i] != p[j]) j = next[j - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> (p[i] == p[j]) ++j;</span><br><span class="line">    next[i] = j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>现在有了 next 数组，可以方便的查找模式串中当前字符的下一个开始匹配位置了，那么该怎么使用呢？</p><p>在原串中使用指针 <code>i</code>，在模式串中使用指针 <code>j</code>。</p><ul><li>初始化：int i = 0, j = 0;</li><li>如果匹配（s[i] == p[j]）：<code>++i; ++j;</code> 如果 <code>j == m</code>，说明整个模式串匹配成功，直接返回 <code>i - m + 1</code>。</li><li>如果不匹配（s[i] != p[j]）：令 <code>j = next[j - 1]</code>，之后如果匹配，则返回上个步骤；如果不匹配，继续令 <code>j = next[j - 1]</code>，直到 <code>j == 0</code>，说明整个已经匹配过的模式串中不存在相同的前、后缀。</li></ul><p>代码：</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">    <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; s[i] != p[j]) j = next[j - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j]) ++j;</span><br><span class="line">    <span class="keyword">if</span> (j == m) <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>下面是整个 KMP 的完整代码：</p><div class="tabs" id="1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#1-1">不带哨兵版</button></li><li class="tab"><button type="button" data-href="#1-2">带哨兵版</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="1-1"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String ss, String pp)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] s = ss.toCharArray();</span><br><span class="line">    <span class="keyword">char</span>[] p = pp.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> n = s.length, m = p.length;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">1</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; p[i] != p[j]) j = next[j - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j]) ++j;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; s[i] != p[j]) j = next[j - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (s[i] == p[j]) ++j;</span><br><span class="line">        <span class="keyword">if</span> (j == m) <span class="keyword">return</span> i - m + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="1-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String ss, String pp)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pp.isEmpty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = ss.length(), m = pp.length();</span><br><span class="line">    <span class="keyword">char</span>[] s = (<span class="string">&quot; &quot;</span> + ss).toCharArray();</span><br><span class="line">    <span class="keyword">char</span>[] p = (<span class="string">&quot; &quot;</span> + pp).toCharArray();</span><br><span class="line">    <span class="keyword">int</span>[] next = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) ++j;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) ++j;</span><br><span class="line">        <span class="keyword">if</span> (j == m) <span class="keyword">return</span> i - m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top"><i class="fas fa-arrow-up"></i></button></div></div></div><p>希望该篇文章对你有帮助：）</p><p>参考文章：<a href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/solution/shua-chuan-lc-shuang-bai-po-su-jie-fa-km-tb86/">【宫水三叶】简单题学 KMP 算法</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KMP字符串匹配算法 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -249,10 +273,16 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> LRU缓存 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -268,7 +298,7 @@
       
       <categories>
           
-          <category> JVM </category>
+          <category> 后端开发 </category>
           
       </categories>
       
@@ -487,7 +517,7 @@
       
       <categories>
           
-          <category> 读书 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -512,10 +542,16 @@
       
       <categories>
           
-          <category> 文章分享 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 文章分享 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -577,7 +613,7 @@
       
       <categories>
           
-          <category> Linux/Unix </category>
+          <category> 后端开发 </category>
           
       </categories>
       
@@ -585,6 +621,8 @@
         <tags>
             
             <tag> GCC </tag>
+            
+            <tag> Linux/Unix </tag>
             
         </tags>
       
@@ -677,7 +715,7 @@
       
       <categories>
           
-          <category> C++ </category>
+          <category> 后端开发 </category>
           
       </categories>
       
@@ -685,10 +723,6 @@
         <tags>
             
             <tag> C++ </tag>
-            
-            <tag> 指针 </tag>
-            
-            <tag> const 常量 </tag>
             
         </tags>
       
@@ -706,7 +740,7 @@
       
       <categories>
           
-          <category> 读书 </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -900,7 +934,7 @@
       
       <categories>
           
-          <category> 机器学习 </category>
+          <category> 人工智能 </category>
           
       </categories>
       
@@ -908,6 +942,8 @@
         <tags>
             
             <tag> Matplotlib </tag>
+            
+            <tag> 机器学习 </tag>
             
         </tags>
       
@@ -925,14 +961,14 @@
       
       <categories>
           
-          <category> 机器学习 </category>
+          <category> 人工智能 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 软件安装 </tag>
+            <tag> Octave </tag>
             
         </tags>
       
@@ -975,7 +1011,7 @@
       
       <categories>
           
-          <category> LeetCode 刷题之数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -983,6 +1019,8 @@
         <tags>
             
             <tag> 哈希表 </tag>
+            
+            <tag> LeetCode </tag>
             
         </tags>
       
@@ -1000,7 +1038,7 @@
       
       <categories>
           
-          <category> LeetCode 刷题之数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -1027,7 +1065,7 @@
       
       <categories>
           
-          <category> LeetCode 刷题之数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -1054,7 +1092,7 @@
       
       <categories>
           
-          <category> LeetCode 刷题之数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
@@ -1081,12 +1119,14 @@
       
       <categories>
           
-          <category> LeetCode 刷题之数据结构 </category>
+          <category> 数据结构与算法 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> LeetCode </tag>
             
             <tag> 链表 </tag>
             
@@ -1156,7 +1196,7 @@
       
       <categories>
           
-          <category> Mac </category>
+          <category> 我的生活 </category>
           
       </categories>
       
@@ -1164,6 +1204,8 @@
         <tags>
             
             <tag> Timemachine </tag>
+            
+            <tag> Mac </tag>
             
         </tags>
       
@@ -1181,7 +1223,7 @@
       
       <categories>
           
-          <category> 深度学习 </category>
+          <category> 人工智能 </category>
           
       </categories>
       
@@ -1206,14 +1248,16 @@
       
       <categories>
           
-          <category> 机器学习 </category>
+          <category> 人工智能 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Python </tag>
+            <tag> 机器学习 </tag>
+            
+            <tag> Numpy </tag>
             
         </tags>
       
@@ -1258,14 +1302,14 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> 人工智能 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Python </tag>
+            <tag> Python切片 </tag>
             
         </tags>
       
