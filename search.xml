@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>设计模式之单例模式</title>
+      <link href="/posts/441148158/"/>
+      <url>/posts/441148158/</url>
+      
+        <content type="html"><![CDATA[<p>单例模式（Singleton Pattern）：用来创建独一无二的，只有一个实例的对象。比如，线程池、缓存等。</p><p>如果不用单例模式，那有什么办法能创建一个独一无二的对象呢？</p><p>可以使用 Java 的静态变量。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA create class and method comment use template</title>
       <link href="/posts/1774144165/"/>
       <url>/posts/1774144165/</url>
