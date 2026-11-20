@@ -1,0 +1,139 @@
+#page-header.has-solar-hero {
+  isolation: isolate;
+  touch-action: pan-y pinch-zoom;
+  background: #000;
+  animation: none;
+}
+
+#page-header.has-solar-hero::before {
+  content: none;
+}
+
+#page-header.has-solar-hero #nav:not(.fixed) {
+  opacity: 1;
+  animation: none;
+}
+
+#page-header [data-article-hero-copy-region="headline"] {
+  display: inline-block;
+}
+
+#page-header .solar-hero {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 110%, #0c1c29, #030a0f 70%);
+  mask-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / 16%) 3%,
+    rgb(0 0 0 / 52%) 7%, rgb(0 0 0 / 88%) 11%, #000 16%, #000 68%,
+    rgb(0 0 0 / 88%) 75%, rgb(0 0 0 / 52%) 84%, rgb(0 0 0 / 16%) 92%, transparent);
+}
+
+#page-header .solar-hero canvas,
+#page-header.has-solar-hero #site-title,
+#page-header.has-solar-hero #site-subtitle {
+  animation: none;
+}
+
+.solar-stream,
+.solar-sun {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.solar-sun {
+  mask-size: 100% 100%;
+}
+
+.solar-sun canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.solar-playback {
+  position: absolute;
+  top: 76px;
+  right: 16px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #080a0b;
+  background: rgb(245 246 251 / 44%);
+  cursor: pointer;
+}
+
+.solar-playback[hidden] {
+  display: none;
+}
+
+.solar-playback::before {
+  content: '';
+  width: 4px;
+  height: 9px;
+  box-sizing: content-box;
+  border-inline: 3px solid;
+}
+
+.solar-playback[data-paused="true"]::before {
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 5px 0 5px 8px;
+  border-left-color: currentColor;
+}
+
+.solar-playback:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .solar-playback {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .has-solar-hero:hover .solar-playback,
+  .has-solar-hero:focus-within .solar-playback {
+    opacity: 1;
+  }
+}
+
+#page-header.has-solar-hero #site-info {
+  top: 51%;
+  left: 8%;
+  width: 25%;
+  padding: 0;
+  transform: translateY(-50%);
+}
+
+#page-header.has-solar-hero #site-title,
+#page-header.has-solar-hero #site-subtitle,
+#page-header.has-solar-hero #site_social_icons {
+  text-align: left;
+  text-shadow: 0 2px 10px #02080d;
+}
+
+@media (max-width: 700px) {
+  #page-header.has-solar-hero #site-info {
+    top: 73%;
+    left: 6%;
+    width: 88%;
+  }
+
+  #page-header.has-solar-hero #site-title,
+  #page-header.has-solar-hero #site-subtitle,
+  #page-header.has-solar-hero #site_social_icons {
+    text-align: center;
+  }
+}
