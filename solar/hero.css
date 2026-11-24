@@ -1,5 +1,5 @@
 #page-header.has-solar-hero {
-  isolation: isolate;
+  z-index: 91;
   touch-action: pan-y pinch-zoom;
   background: #000;
   animation: none;
@@ -9,7 +9,7 @@
   content: none;
 }
 
-#page-header.has-solar-hero #nav:not(.fixed) {
+#page-header.has-solar-hero #nav {
   opacity: 1;
   animation: none;
 }

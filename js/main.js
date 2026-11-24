@@ -338,7 +338,7 @@ $(function () {
       const percentage = (scrollPercentRounded > 100) ? 100
         : (scrollPercentRounded <= 0) ? 0
           : scrollPercentRounded
-      $cardToc.attr('progress-percentage', percentage)
+      $cardToc.attr('progress-percentage', `${percentage}%`)
     }
 
     // anchor
@@ -681,6 +681,11 @@ $(function () {
   }
 
   const unRefreshFn = function () {
+    document.addEventListener('posts:appended', function (event) {
+      if (GLOBAL_CONFIG.relativeDate.homepage) relativeDate($(event.detail).filter('.recent-post-item').find('time'))
+      if (window.lazyLoadInstance) window.lazyLoadInstance.update()
+    })
+
     $(window).on('resize', function () {
       adjustMenu()
     })
